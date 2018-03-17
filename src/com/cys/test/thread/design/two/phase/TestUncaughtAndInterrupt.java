@@ -11,11 +11,22 @@ public class TestUncaughtAndInterrupt {
             }
         });
 
+        Runtime time = Runtime.getRuntime();
+        time.addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println(Thread.currentThread().getName());
+            }
+        }));
         new Thread(new Runnable() {
             @Override
             public void run() {
-                throw new NullPointerException();
+                try {
+                    throw new NullPointerException();
+                } catch (Exception e) {
+
+                }
             }
-        }).start();
+        }, "test").start();
     }
 }
