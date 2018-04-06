@@ -1,7 +1,5 @@
 package com.cys.test.base;
 
-import java.util.Map;
-
 public class Cycle {
 
     public void test(){
