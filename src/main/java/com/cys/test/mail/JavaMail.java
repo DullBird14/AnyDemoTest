@@ -12,7 +12,6 @@ public class JavaMail {
         Properties props = new Properties();
         props.setProperty("mail.transport.protocol", "SMTP");
         props.setProperty("mail.smtp.host", "smtp.qq.com");
-        props.setProperty("mail.smtp.port", "465");
         // 指定验证为true
         props.setProperty("mail.smtp.auth", "true");
         props.setProperty("mail.smtp.timeout","1000");
