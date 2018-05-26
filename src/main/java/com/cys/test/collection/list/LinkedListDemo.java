@@ -1,6 +1,8 @@
 package com.cys.test.collection.list;
 
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Spliterator;
 
 /**
  * 双向链表,初始化的时候长度没有限制
@@ -12,12 +14,57 @@ import java.util.LinkedList;
  */
 public class LinkedListDemo {
     public static void main(String[] args) {
+//        LinkedList list = new LinkedList();
+//        list.add("b");
+//        list.add("a");
+//        list.add("c");
+//        System.out.println(list);
+
+//        testAddAll();
+//        testPoll();
+//        testClone();
+//        testToArray();
+        testTrySplit();
+    }
+
+    static void testAddAll(){
         LinkedList list = new LinkedList();
         list.add("b");
         list.add("a");
         list.add("c");
-
-        list.get(2);
+        list.addAll(list);
         System.out.println(list);
+    }
+
+    static void testPoll(){
+        LinkedList list = new LinkedList();
+        System.out.println(list.poll());
+        System.out.println(list.poll());
+        System.out.println(list.element());
+
+    }
+
+    static void testClone(){
+        LinkedList list = new LinkedList(Arrays.asList(1, "111", null, new Object()));
+        System.out.println(list);
+        System.out.println((LinkedList)list.clone());
+
+    }
+
+    static void testToArray(){
+        LinkedList list = new LinkedList(Arrays.asList(1));
+        Integer[] test = {1, 2, 3, 4, 5, 6};
+        Object[] objects = list.toArray(test);
+        System.out.println(Arrays.toString(objects));
+    }
+
+    static void testTrySplit(){
+        LinkedList list = new LinkedList(Arrays.asList(1, "111", null, new Object()));
+        Spliterator spliterator = list.spliterator();
+        list.spliterator();
+        System.out.println(spliterator.estimateSize());
+        spliterator.forEachRemaining((Object o)->{
+            System.out.println(o);
+        });
     }
 }

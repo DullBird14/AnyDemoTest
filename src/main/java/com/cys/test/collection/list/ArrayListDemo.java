@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Spliterator;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.function.Consumer;
 
 /**
@@ -16,6 +17,7 @@ import java.util.function.Consumer;
 
 public class ArrayListDemo {
     public static void main(String[] args) {
+        new LinkedBlockingQueue<>();
         ArrayList<String> list = new ArrayList<String>();
         testSpliterator();
 //        testRemoveAll();
